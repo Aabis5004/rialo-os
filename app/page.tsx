@@ -1,5 +1,6 @@
-import { getProjects } from "@/lib/projects";
+import { getProjects, getCategories } from "@/lib/projects";
 import { ProjectStatus } from "@/lib/types";
+import { FilterBar } from "./filter-bar";
 
 const STATUS_LABEL: Record<ProjectStatus, string> = {
   IDEA: "Idea",
@@ -9,8 +10,16 @@ const STATUS_LABEL: Record<ProjectStatus, string> = {
   MAINNET: "Mainnet",
 };
 
-export default async function Home() {
-  const projects = await getProjects();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
+  const [projects, categories] = await Promise.all([
+    getProjects(category),
+    getCategories(),
+  ]);
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-20">
@@ -24,31 +33,39 @@ export default async function Home() {
           Ecosystem
         </h2>
         <span className="text-sm text-neutral-500">
-          {projects.length} projects
+          {projects.length} {projects.length === 1 ? "project" : "projects"}
         </span>
       </div>
 
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-        {projects.map((p) => (
-          <li
-            key={p.id}
-            className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 transition-colors hover:border-neutral-600"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="font-medium">{p.name}</h3>
-              <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-0.5 text-xs text-neutral-400">
-                {STATUS_LABEL[p.status]}
-              </span>
-            </div>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-              {p.tagline}
-            </p>
-            <p className="mt-4 text-xs uppercase tracking-wider text-neutral-600">
-              {p.category}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <FilterBar categories={categories} active={category} />
+
+      {projects.length === 0 ? (
+        <p className="mt-16 text-center text-sm text-neutral-500">
+          No projects in this category yet.
+        </p>
+      ) : (
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          {projects.map((p) => (
+            <li
+              key={p.id}
+              className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 transition-colors hover:border-neutral-600"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-medium">{p.name}</h3>
+                <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-0.5 text-xs text-neutral-400">
+                  {STATUS_LABEL[p.status]}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                {p.tagline}
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-neutral-600">
+                {p.category}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }

@@ -43,6 +43,11 @@ const PROJECTS: Project[] = [
   },
 ];
 
-export async function getProjects(): Promise<Project[]> {
-  return PROJECTS;
+export async function getCategories(): Promise<string[]> {
+  return [...new Set(PROJECTS.map((p) => p.category))].sort();
+}
+
+export async function getProjects(category?: string): Promise<Project[]> {
+  if (!category) return PROJECTS;
+  return PROJECTS.filter((p) => p.category === category);
 }
