@@ -3,7 +3,9 @@ export type ProjectStatus =
   | "BUILDING"
   | "PRIVATE_TESTNET"
   | "PUBLIC_TESTNET"
-  | "MAINNET";
+  | "MAINNET"
+  | "LIVE"
+  | "UPCOMING";
 
 export type Project = {
   id: string;
@@ -14,4 +16,7 @@ export type Project = {
   status: ProjectStatus;
   website?: string;
   twitter?: string;
+  primitive?: string;
+  replaces?: string;
+  demoUrl?: string;
 };

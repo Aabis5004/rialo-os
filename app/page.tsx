@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getProjects, getCategories } from "@/lib/projects";
 import { ProjectStatus } from "@/lib/types";
 import { FilterBar } from "./filter-bar";
@@ -8,6 +9,8 @@ const STATUS_LABEL: Record<ProjectStatus, string> = {
   PRIVATE_TESTNET: "Private devnet",
   PUBLIC_TESTNET: "Public testnet",
   MAINNET: "Mainnet",
+  LIVE: "Live",
+  UPCOMING: "Upcoming",
 };
 
 export default async function Home({
@@ -48,20 +51,22 @@ export default async function Home({
           {projects.map((p) => (
             <li
               key={p.id}
-              className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 transition-colors hover:border-neutral-600"
+              className="rounded-xl border border-neutral-800 bg-neutral-900/40 transition-colors hover:border-neutral-600"
             >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="font-medium">{p.name}</h3>
-                <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-0.5 text-xs text-neutral-400">
-                  {STATUS_LABEL[p.status]}
-                </span>
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                {p.tagline}
-              </p>
-              <p className="mt-4 text-xs uppercase tracking-wider text-neutral-600">
-                {p.category}
-              </p>
+              <Link href={`/projects/${p.slug}`} className="block p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-medium">{p.name}</h3>
+                  <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-0.5 text-xs text-neutral-400">
+                    {STATUS_LABEL[p.status]}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                  {p.tagline}
+                </p>
+                <p className="mt-4 text-xs uppercase tracking-wider text-neutral-600">
+                  {p.category}
+                </p>
+              </Link>
             </li>
           ))}
         </ul>

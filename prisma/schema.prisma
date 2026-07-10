@@ -13,6 +13,8 @@ enum ProjectStatus {
   PRIVATE_TESTNET
   PUBLIC_TESTNET
   MAINNET
+  LIVE
+  UPCOMING
 }
 
 model Category {
@@ -35,6 +37,9 @@ model Project {
   status      ProjectStatus @default(BUILDING)
   isFeatured  Boolean       @default(false)
   createdAt   DateTime      @default(now())
+  primitive   String?
+  replaces    String?
+  demoUrl     String?
 
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
