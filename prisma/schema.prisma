@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProjectStatus {
+  IDEA
+  BUILDING
+  PRIVATE_TESTNET
+  PUBLIC_TESTNET
+  MAINNET
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  slug     String    @unique
+  projects Project[]
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  name        String
+  tagline     String
+  description String?
+  logoUrl     String?
+  website     String?
+  twitter     String?
+  github      String?
+  status      ProjectStatus @default(BUILDING)
+  isFeatured  Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+  @@index([status])
+}
