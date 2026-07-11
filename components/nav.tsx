@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const LINKS = [
   { href: "/", label: "Ecosystem" },
   { href: "/map", label: "Map" },
+  { href: "/architecture", label: "Architecture" },
 ];
 
 export function Nav() {
