@@ -95,7 +95,7 @@ export function Graph({ nodes, links }: { nodes: GraphNode[]; links: GraphLink[]
     };
     raf = requestAnimationFrame(tick);
 
-    const fit = setTimeout(() => fg.zoomToFit(1200, 110), 1500);
+    const fit = setTimeout(() => fg.zoomToFit(1200, 130), 2200);
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(fit);
@@ -252,7 +252,7 @@ export function Graph({ nodes, links }: { nodes: GraphNode[]; links: GraphLink[]
             const text = new SpriteText(n.label);
             text.color = s.labelColor;
             text.textHeight = s.labelSize;
-            text.position.y = s.radius + 10;
+            text.position.y = s.radius * 2.4 + 6;
             group.add(text);
           }
 
