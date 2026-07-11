@@ -95,7 +95,7 @@ export function Graph({ nodes, links }: { nodes: GraphNode[]; links: GraphLink[]
     };
     raf = requestAnimationFrame(tick);
 
-    const fit = setTimeout(() => fg.zoomToFit(1200, 130), 2200);
+    const fit = setTimeout(() => fg.zoomToFit(1000, 60), 2200);
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(fit);
