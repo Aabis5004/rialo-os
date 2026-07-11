@@ -1,0 +1,7 @@
+Building Native Privacy for Real-World Blockchain Adoption
+
+Rialo integrates privacy-preserving confidential computation as a protocol-native primitive. When privacy is outsourced to external layers, new trust assumptions are introduced, since those layers lack the decentralization and safety guarantees of the underlying blockchain — and costs and operational complexity rise. Rialo provides privacy as a protocol-native feature instead.
+
+Native privacy strengthens supermodularity: the value of Rialo's execution layer and other components (oracles, bridges, automation, native web calls) increases because privacy is built into the chain. It expands what operations can be securely run on-chain, and eliminates compound marginalization for developers and users.
+
+Rialo is built on the assumption that privacy is the missing piece in the blockchain adoption puzzle. By embedding privacy into the base layer, Rialo lets developers build applications that integrate with real-world systems, compose securely with off-chain data, and mirror the best features of Web2 applications.

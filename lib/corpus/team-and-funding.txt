@@ -1,0 +1,7 @@
+Rialo: Team, Funding, and Status
+
+Rialo is a Layer 1 blockchain built by Subzero Labs. It was founded by Ade Adepoju and Lu Zhang, who previously held engineering roles at Mysten Labs (Sui) and at large technology companies including Meta and Netflix. The team includes core engineers from organizations such as Mysten Labs, Meta, Google, Apple, Amazon, and others.
+
+Rialo raised a seed round led by Pantera Capital. Its investors include Coinbase, Pantera Capital, Susquehanna, Edge Capital, Mirana, and Mysten Labs. Its partners include Nasdaq, CBOE, NYSE, Predicate, DoubleZero, M0, and Keplr.
+
+Rialo's DevNet is currently private and live for early builders. As of early 2026 there is no public testnet, no public RPC, and no publicly announced token. Rialo is VM-flexible, described as compatible with RISC-V and the Solana VM, with an event-driven execution model.

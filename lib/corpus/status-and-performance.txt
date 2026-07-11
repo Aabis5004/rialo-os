@@ -1,0 +1,12 @@
+Rialo: Performance, Status, and What's Live
+
+Performance figures Rialo has published:
+Rialo's own materials cite roughly 200 millisecond finality latency and true sub-second end-to-end latency for users. Rialo emphasizes that raw TPS is "performance theater" — it argues that chasing throughput benchmarks misses the real problems of user experience and developer friction. Rialo's homepage cites additional figures for its components, including a 50ms block time target, interoperability faster than top bridges, and native data feeds faster than top oracles. These are figures Rialo publishes about its own design; they are not independently measured live network statistics.
+
+What is live today:
+Rialo's DevNet is private and live for early builders. As of early 2026 there is NO public testnet, NO public RPC endpoint, and NO public block explorer. There is no publicly announced token. Because the network is private, there is no live, real-time performance data (current TPS, active wallets, blocks produced) available to the public — those numbers cannot be measured from outside until a public network launches.
+
+If someone asks for current, live, real-time chain metrics (TPS right now, wallet count, latest block), the honest answer is that Rialo's DevNet is private, so no public real-time data exists yet. The published design figures above are the most specific numbers available.
+
+Architecture facts:
+Rialo is an event-driven Layer 1 built by Subzero Labs, VM-flexible (compatible with RISC-V and the Solana VM), with smart contracts that can make one-line HTTPS calls to Web2 APIs directly, and async/await primitives that let contracts sleep, wake, and react across blocks without external bots.

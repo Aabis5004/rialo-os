@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/", label: "Ecosystem" },
   { href: "/map", label: "Map" },
   { href: "/architecture", label: "Architecture" },
+  { href: "/ask", label: "Ask" },
 ];
 
 export function Nav() {

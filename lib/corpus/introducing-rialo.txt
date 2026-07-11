@@ -1,0 +1,21 @@
+Introducing Rialo: A Blockchain Built for the Real World
+
+Rialo is the real-world blockchain: a decentralized, high-performance and ergonomic programming network that interacts with real life. Two decades ago the flip phone evolved into the smartphone when GPS, cameras, and internet connectivity were embedded into one device. Rialo brings that convergence to blockchain.
+
+Despite high TPS on new chains, adoption remains limited because not everyone wants to leave the comforts of Web2. Today's blockchains exist as islands, blind to real-world events. Rialo closes the divide, letting developers build decentralized apps that feel like modern software.
+
+Developer pain points Rialo addresses: drowning in third-party integrations and brittle off-chain services; slow reads that crawl through validators, fullnodes, indexers, and backends; fragile monitoring services that trigger timed transactions but vanish under congestion; expensive indexers costing thousands monthly; the oracle tax; and bridges that degrade Layer One security.
+
+Rialo's capabilities:
+- Real World Data: pull live data with a one-line HTTPS call in a smart contract.
+- Real World Connectivity: integrate off-chain APIs directly in a smart contract.
+- Real World Privacy: verifiable and confidential execution.
+- Real World Identity: use email, SMS, or social accounts as a Web3 passport.
+- Real World Speed: sub-second end-to-end latency.
+- Real World Scalability: Multiple Concurrent Proposers for global scale.
+- Real World Reactivity: on-chain reactions without off-chain monitoring loops or gas wars. Transactions react instantly, automatically, and reliably.
+- Real World Programmability: Future/Promise/.await, event-driven logic, and randomness. Smart contracts can sleep, loop, and resume across blocks, powered by RISC-V.
+- Real World Usability: 2FA, scheduled transactions, social logins.
+- Real World Assets and Applications: mainstream and long-tail assets, apps beyond speculation.
+
+Rialo is supermodular by design, each capability amplifying the rest. The Rialo private DevNet is now live.

@@ -1,0 +1,5 @@
+Project 1337: Streaming Market Data Onchain in Real Time
+
+Bringing real-world assets onchain is a key step for taking onchain finance mainstream. RWA markets let participants price, trade, lend, and collateralize real-world assets — stocks, commodities, currencies, credit instruments — directly on blockchain rails, bridging DeFi's liquidity and composability with traditional finance's scale.
+
+Project 1337 is a Rialo demonstration that streams 1,337 market tickers onchain, updating roughly every 300 milliseconds. It showcases Rialo Stream, the chain's native data feed capability, which Rialo describes as substantially faster than external oracle services. On Rialo, RWAs are not static tokens: they can subscribe to live data, react the moment conditions change, and trigger downstream actions without a human in the loop.

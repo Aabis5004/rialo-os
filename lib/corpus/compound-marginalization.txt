@@ -1,0 +1,7 @@
+Rialo Foundations I: Double Marginalization in Crypto
+
+Double marginalization, from economics, describes what happens when multiple monopolies in a supply chain each maximize their own profit without considering aggregate demand. Every layer adds a markup, the final price rises, demand falls, and total ecosystem profit shrinks. Everyone loses.
+
+The same dynamic appears in blockchain. Base-layer chains charge transaction fees. Middleware providers — oracles, bots, indexers — charge separately, each optimizing only for itself. Every extra layer adds markup and amplifies the markups beneath it. Rialo calls this compound marginalization. According to the Rialo developer survey and the Foundations whitepaper, close to 90 percent of potential value — developer profit and user savings — is wiped out for all but the largest DeFi apps. The problem worsens on faster chains, where demand for low-latency off-chain services is higher.
+
+Rialo's answer is vertical integration: embed core middleware functions directly into the base protocol, turning external dependencies into native capabilities. This lowers fees, improves coordination between infrastructure and applications, and aligns the incentives of developers and users, increasing overall welfare. The next catalyst for crypto adoption, in Rialo's view, is not faster consensus but intelligently designed systems that reduce the cost of innovation.

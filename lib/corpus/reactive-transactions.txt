@@ -1,0 +1,13 @@
+Reactive Transactions: A Model for Native Automation on Rialo
+
+Current blockchain applications rely on a fragile tower of offchain automation to function. Blockchains are fundamentally synchronous systems: they execute logic only when a transaction is submitted. To run any form of asynchronous workflow, applications depend on bots, keepers, cron-based schedulers, indexers, and other orchestration logic.
+
+Reactive transactions introduce a different model. Developers define predicates that trigger transactions. A predicate is a logical expression that determines the conditions under which a transaction is eligible for execution. Each predicate is stored onchain and continuously evaluated during block execution; if the condition is met, the associated transaction triggers automatically.
+
+A predicate may reference onchain state such as balances, collateral ratios, or AMM curve parameters; state transitions produced by other programs during the same block; events emitted by earlier transactions; validator-attested oracle data; time-based conditions such as block height or timestamp; and results of earlier steps in a workflow.
+
+All waiting happens inside the validator process itself. A reactive workflow does not rely on an external system watching for a condition to change. Every validator evaluates the same conditions against the same state and reaches the same outcome.
+
+Reactive transactions enable real-time risk management for lending markets, autonomous perpetual markets without centralized keepers, adaptive AMMs and vaults, improved real-world asset protocols, advanced prediction markets, cross-protocol orchestration, and hybrid onchain-offchain compute via validator-attested API calls.
+
+By making reactive execution a native protocol primitive, Rialo removes the need for bots, keepers, cron systems, and other forms of external automation. Application logic remains within a single trust model rather than being split across centralized services.
