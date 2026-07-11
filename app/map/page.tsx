@@ -6,26 +6,23 @@ export default async function MapPage() {
   const { nodes, links } = await getGraph();
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <Link href="/" className="text-sm text-neutral-500 hover:text-neutral-300">
-        ← Ecosystem
+    <div className="relative h-full w-full">
+      <Link
+        href="/"
+        className="absolute left-6 top-6 z-[110] flex items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-white/80 backdrop-blur-md transition-colors hover:border-white/30 hover:text-white"
+      >
+        ← Back
       </Link>
 
-      <h1 className="mt-8 text-4xl font-medium tracking-tight">Ecosystem map</h1>
-      <p className="mt-3 max-w-2xl leading-relaxed text-neutral-400">
-        Every Rialo demo, the primitive it runs on, and who backs the chain.
-        Orange edges show which apps depend on which primitive.
-      </p>
-
-      <div className="mt-6 flex gap-6 text-xs text-neutral-500">
-        <span><span className="mr-2 inline-block h-2 w-2 rounded-full bg-neutral-50" />Project</span>
-        <span><span className="mr-2 inline-block h-2 w-2 rounded-full bg-amber-500" />Primitive</span>
-        <span><span className="mr-2 inline-block h-2 w-2 rounded-full bg-gray-500" />Backer</span>
+      <div className="pointer-events-none absolute left-6 bottom-6 z-[110] flex gap-5 text-[11px] text-white/40">
+        <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#e8a33d]" />Primitive</span>
+        <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#d4a44c]" />Finance</span>
+        <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#4ca97a]" />Automation</span>
+        <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#3fa8c4]" />Markets</span>
+        <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#5a7ee0]" />AI</span>
       </div>
 
-      <div className="mt-8">
-        <Graph nodes={nodes} links={links} />
-      </div>
-    </main>
+      <Graph nodes={nodes} links={links} />
+    </div>
   );
 }
