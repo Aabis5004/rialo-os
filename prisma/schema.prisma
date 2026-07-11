@@ -47,3 +47,38 @@ model Project {
   @@index([categoryId])
   @@index([status])
 }
+
+enum NodeType {
+  PROJECT
+  PRIMITIVE
+  BACKER
+}
+
+enum EdgeKind {
+  USES
+  BACKS
+}
+
+model Node {
+  id    String   @id @default(uuid())
+  slug  String   @unique
+  label String
+  type  NodeType
+
+  outgoing Edge[] @relation("source")
+  incoming Edge[] @relation("target")
+}
+
+model Edge {
+  id       String   @id @default(uuid())
+  sourceId String
+  targetId String
+  kind     EdgeKind
+
+  source Node @relation("source", fields: [sourceId], references: [id])
+  target Node @relation("target", fields: [targetId], references: [id])
+
+  @@unique([sourceId, targetId, kind])
+  @@index([sourceId])
+  @@index([targetId])
+}

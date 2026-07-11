@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Hero } from "@/components/hero";
 import { getProjects, getCategories } from "@/lib/projects";
 import { ProjectStatus } from "@/lib/types";
 import { FilterBar } from "./filter-bar";
@@ -25,11 +26,17 @@ export default async function Home({
   ]);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-20">
-      <h1 className="text-4xl font-medium tracking-tight">Rialo OS</h1>
-      <p className="mt-3 text-neutral-400">
-        The operating system for the Rialo ecosystem.
-      </p>
+    <main>
+      <Hero live={projects.filter((p) => p.status === "LIVE").length} total={projects.length} />
+      <div className="mx-auto max-w-5xl px-6 py-24" id="ecosystem">
+      <h1 className="sr-only">Rialo OS</h1>
+
+      <Link
+        href="/map"
+        className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
+      >
+        View ecosystem map →
+      </Link>
 
       <div className="mt-14 flex items-baseline justify-between border-b border-neutral-800 pb-4">
         <h2 className="text-sm uppercase tracking-widest text-neutral-500">
@@ -71,6 +78,7 @@ export default async function Home({
           ))}
         </ul>
       )}
+      </div>
     </main>
   );
 }
