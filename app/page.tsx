@@ -33,7 +33,7 @@ export default async function Home({
 
       <Link
         href="/map"
-        className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
+        className="mt-6 inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-sm font-semibold text-bone transition-all hover:bg-white/5 hover:text-white"
       >
         View ecosystem map →
       </Link>
@@ -58,21 +58,24 @@ export default async function Home({
           {projects.map((p) => (
             <li
               key={p.id}
-              className="rounded-xl border border-neutral-800 bg-neutral-900/40 transition-colors hover:border-neutral-600"
+              className="group glass-panel rounded-xl transition-all duration-300 hover:-translate-y-1"
             >
               <Link href={`/projects/${p.slug}`} className="block p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-medium">{p.name}</h3>
-                  <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-0.5 text-xs text-neutral-400">
+                  <h3 className="font-bold text-bone">{p.name}</h3>
+                  <span className="shrink-0 rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5 text-xs font-medium text-accent">
                     {STATUS_LABEL[p.status]}
                   </span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                <p className="mt-2 text-sm leading-relaxed text-ash transition-colors group-hover:text-bone/90">
                   {p.tagline}
                 </p>
-                <p className="mt-4 text-xs uppercase tracking-wider text-neutral-600">
-                  {p.category}
-                </p>
+                <div className="mt-6 flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-accent opacity-70 group-hover:opacity-100 group-hover:shadow-[0_0_8px_rgba(255,99,33,1)] transition-all" />
+                  <p className="text-xs uppercase tracking-wider text-dust group-hover:text-ash transition-colors">
+                    {p.category}
+                  </p>
+                </div>
               </Link>
             </li>
           ))}

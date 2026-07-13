@@ -7,9 +7,9 @@ export function FilterBar({
   categories: string[];
   active?: string;
 }) {
-  const pill = "rounded-full border px-3.5 py-1.5 text-xs transition-colors";
-  const on = "border-neutral-400 bg-neutral-100 text-neutral-900";
-  const off = "border-neutral-800 text-neutral-400 hover:border-neutral-600";
+  const pill = "rounded-full border px-4 py-1.5 text-xs font-semibold transition-all duration-300";
+  const on = "border-accent bg-accent/10 text-accent shadow-[0_0_12px_rgba(255,99,33,0.2)]";
+  const off = "glass-panel text-ash hover:text-bone hover:border-accent/50";
 
   return (
     <div className="mt-8 flex flex-wrap gap-2">

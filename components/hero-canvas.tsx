@@ -63,14 +63,14 @@ export function HeroCanvas() {
     const frame = () => {
       ctx.clearRect(0, 0, w, h);
 
-      ctx.strokeStyle = "rgba(232,163,61,0.35)";
+      ctx.strokeStyle = "rgba(255, 99, 33, 0.45)";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.moveTo(spineX, 30);
       ctx.lineTo(spineX, h - 30);
       ctx.stroke();
       for (let y = 50; y < h - 30; y += 34) {
-        ctx.fillStyle = "rgba(232,163,61,0.25)";
+        ctx.fillStyle = "rgba(255, 99, 33, 0.35)";
         ctx.fillRect(spineX - 1.5, y, 3, 3);
       }
 
@@ -93,7 +93,7 @@ export function HeroCanvas() {
           ctx.fill();
 
           if (s.x > spineX - 160) {
-            ctx.strokeStyle = `rgba(232,163,61,${(s.x - (spineX - 160)) / 160 * 0.5})`;
+            ctx.strokeStyle = `rgba(255, 99, 33, ${(s.x - (spineX - 160)) / 160 * 0.6})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(s.x, s.y);
@@ -107,7 +107,7 @@ export function HeroCanvas() {
         } else {
           s.pulse += 0.04;
           const glow = Math.max(0, Math.sin(s.pulse)) ;
-          ctx.fillStyle = `rgba(255,216,155,${0.4 + glow * 0.6})`;
+          ctx.fillStyle = `rgba(255, 133, 79, ${0.4 + glow * 0.6})`;
           ctx.beginPath();
           ctx.arc(spineX, s.snapY, 3 + glow * 2, 0, Math.PI * 2);
           ctx.fill();
