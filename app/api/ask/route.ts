@@ -35,7 +35,7 @@ ${context}`;
   try {
     const genAI = new GoogleGenerativeAI(key);
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash-latest",
+      model: "gemini-3.5-flash",
       systemInstruction: system,
     });
     const result = await model.generateContent(question);
