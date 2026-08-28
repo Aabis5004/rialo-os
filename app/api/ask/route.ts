@@ -43,7 +43,7 @@ ${context}`;
   } catch (e) {
     console.error("GEMINI ERROR:", e);
     return Response.json(
-      { error: "The assistant is unavailable right now." },
+      { error: `The assistant is unavailable right now. Details: ${e instanceof Error ? e.message : String(e)}` },
       { status: 500 }
     );
   }
